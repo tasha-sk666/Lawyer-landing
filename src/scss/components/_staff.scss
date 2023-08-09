@@ -1,0 +1,129 @@
+.staff {
+  padding-top: var(--section-offset);
+  padding-bottom: var(--section-offset);
+  background-color: var(--light-grey-color);
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    @include flex-v-center;
+
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: var(--offset);
+    text-align: center;
+  }
+
+  &__descr {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  &__list {
+    --gap: var(--offset);
+    --elements: 4;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+
+    @include small-tablet {
+      flex-wrap: nowrap;
+      justify-content: unset;
+      gap: unset;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: calc((100% / var(--elements)) - var(--gap));
+    height: auto;
+    cursor: pointer;
+
+    @include hover {
+      .staff__hover-content {
+        opacity: 1;
+      }
+    }
+
+    @include big-desktop {
+      width: 312px;
+      max-width: 312px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    min-height: 320px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: var(--offset);
+    padding-bottom: var(--offset);
+    text-align: center;
+    background-color: var(--light-color);
+  }
+
+  &__hover-content {
+    @include bg-cover;
+    @include flex-all-center;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-image: url("../img/staff-hover.png");
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--dark-color);
+  }
+
+  &__post {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--dark-color);
+  }
+
+  &__about {
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--dark-color);
+  }
+
+  &__exp {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--dark-color);
+  }
+}

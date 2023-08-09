@@ -1,0 +1,104 @@
+.service {
+  padding-top: var(--section-offset);
+  padding-bottom: var(--section-offset);
+  background-color: var(--light-grey-color);
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    @include flex-v-center;
+
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: var(--offset);
+    text-align: center;
+  }
+
+  &__descr {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  &__list {
+    align-items: stretch;
+    grid-auto-rows: minmax(250px, 1fr);
+
+    @include mobile {
+      align-items: unset;
+      grid-auto-rows: unset;
+      gap: unset;
+    }
+  }
+
+  &__item {
+    @include flex-all-center;
+
+    flex-direction: column;
+    align-self: stretch;
+    padding: 50px 32px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    background-color: var(--light-color);
+    transition: background-image 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include hover {
+      @include bg-cover;
+
+      background-image: url("../img/services-hover.png");
+      transition: background-image 0.3s ease-in-out;
+
+      .service__icon {
+        fill: var(--light-color);
+        transition: fill 0.3s ease-in-out;
+      }
+
+      .service__subtitle {
+        color: var(--light-color);
+        transition: color 0.3s ease-in-out;
+      }
+
+      .service__subdescr {
+        color: var(--light-color);
+        transition: color 0.3s ease-in-out;
+      }
+    }
+
+    @include mobile {
+      padding: 25px 20px;
+      width: 65%;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: 20px;
+    width: 35px;
+    height: 35px;
+    fill: var(--accent-color);
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--dark-color);
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__subdescr {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--dark-color);
+    transition: color 0.3s ease-in-out;
+  }
+}

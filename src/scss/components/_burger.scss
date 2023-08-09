@@ -1,0 +1,13 @@
+.burger {
+  @include burger;
+
+  --burger-width: 24px;
+  --burger-height: 24px;
+
+  display: none;
+  color: #fff;
+
+  @include tablet {
+    display: block;
+  }
+}

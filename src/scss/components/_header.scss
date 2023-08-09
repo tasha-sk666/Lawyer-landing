@@ -1,0 +1,113 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+
+  &__logo {
+    @include tablet {
+      width: 180px;
+    }
+  }
+
+  &__top {
+    position: relative;
+    z-index: 50;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: #010101;
+
+    @include mobile {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__top-container {
+    @include flex-all-sb;
+  }
+
+  &__contacts {
+    @include flex;
+
+    gap: 24px;
+  }
+
+  &__contact {
+    &--desk {
+      @include mobile {
+        display: none
+      }
+    }
+  }
+
+  &__contact-link {
+    @include flex-all-sb;
+
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--light-color);
+    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    gap: 10px;
+
+    svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+      fill: var(--accent-color);
+      object-fit: cover;
+    }
+
+    @include hover {
+      color: var(--accent-color);
+    }
+
+    &:active {
+      color: var(--light-color);
+      opacity: 0.6;
+    }
+
+    @include mobile {
+      font-size: 14px;
+      gap: 5px;
+    }
+  }
+
+  &__btn {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--accent-color);
+    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    @include hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--light-color);
+      opacity: 0.6;
+    }
+  }
+
+  &__bottom {
+    padding-top: 20px;
+    padding-bottom: 24px;
+    width: 100%;
+    background-color: #010101c2;
+    transition: transform 0.3s ease-in-out;
+
+    &--hidden {
+      transform: translateY(-100%);
+    }
+
+    @include tablet {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__bottom-container {
+    @include flex-all-sb;
+  }
+}

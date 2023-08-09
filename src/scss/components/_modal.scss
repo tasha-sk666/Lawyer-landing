@@ -1,0 +1,106 @@
+.modal {
+  display: flex;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    padding: 55px 35px;
+    width: 500px;
+
+    @include mobile {
+      padding: 20px 15px;
+      width: 90%;
+    }
+  }
+
+  &__close {
+    right: 5px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    background-image: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 2px;
+      background-color: var(--dark-color);
+      transform: translateY(-50%);
+      transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    @include hover {
+      &::before,
+      &::after {
+        background-color: var(--accent-color);
+      }
+    }
+
+    &:active {
+      &::before,
+      &::after {
+        background-color: var(--accent-color);
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+
+    &::before {
+      display: none;
+    }
+
+    @include mobile {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  }
+
+  &__descr {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__success {
+    @include flex-all-center;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: #a7ffbd;
+
+    &--show {
+      display: flex;
+    }
+  }
+}

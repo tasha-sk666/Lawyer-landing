@@ -1,0 +1,95 @@
+.testimonial {
+  @include bg-cover;
+
+  padding-top: var(--section-offset);
+  padding-bottom: var(--section-offset);
+  background-image: url("../img/mountains.jpg");
+
+  &__header {
+    @include flex-all-sb;
+
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    margin: 0;
+
+    &::before {
+      left: 0;
+      transform: translateX(0);
+    }
+  }
+
+  &__swiper {
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    display: flex;
+
+    @include tablet {
+      width: 70%;
+    }
+
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--light-color);
+  }
+
+  &__author {
+    @include flex-v-center;
+
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__img {
+    overflow: hidden;
+    margin-right: var(--offset);
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+  }
+
+  &__company {
+    margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--dark-color);
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--dark-color);
+  }
+
+  &__feedback {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--dark-color);
+  }
+
+  &__footer {
+    @include flex;
+
+    gap: var(--offset);
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

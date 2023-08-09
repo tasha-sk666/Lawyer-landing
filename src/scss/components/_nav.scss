@@ -1,0 +1,81 @@
+.nav {
+  &__list {
+    @include flex-v-center;
+
+    gap: 31px;
+
+    @include tablet {
+      @include flex-all-center;
+
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--light-color);
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent-color);
+      transform: translateX(-110%);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    @include hover {
+      color: var(--accent-color);
+
+      &::before {
+        transform: translateX(0);
+      }
+    }
+
+    &:active {
+      color: var(--accent-color);
+      opacity: 0.6;
+
+      &::before {
+        transform: translateX(0);
+      }
+    }
+
+    @include tablet {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @include tablet {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+}
+
+.menu--active {
+  opacity: 1;
+  visibility: visible;
+}
