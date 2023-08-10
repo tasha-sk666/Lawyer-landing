@@ -132,6 +132,10 @@
         fill: var(--accent-color);
       }
     }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &--accent {

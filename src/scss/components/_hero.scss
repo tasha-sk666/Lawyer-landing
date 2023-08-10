@@ -77,6 +77,10 @@
 .slider-nav {
   &__container {
     @include flex-all-sb;
+
+    @include mobile {
+      justify-content: center;
+    }
   }
 }
 
